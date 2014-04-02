@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <Key>assets/hover-6e3a840f6c0a4bac48921d5d264f2f67.png</Key>
+  <RequestId>53342FC6AA00DFF46353AFF5</RequestId>
+  <HostId>xmlit.oss-cn-hangzhou.aliyuncs.com</HostId>
+</Error>

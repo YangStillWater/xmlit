@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <Key>assets/circle-fd6aa443bb793064ea8a8d9a7ad7ddd0.png</Key>
+  <RequestId>53342FC638A434705653EF91</RequestId>
+  <HostId>xmlit.oss-cn-hangzhou.aliyuncs.com</HostId>
+</Error>

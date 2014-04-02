@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title>LIT Design - 光束设计</title>
+
+    <link rel="icon" type="image/png" href="/static/assets/Favicon_lit.png">
+    <link href="/static/assets/application-9a021df888e6d8c5d11b39f94474b1a0.css" media="all" rel="stylesheet"/>
+    <!--<script src="/static/assets/application-fa172cf6dcd5d0571edab42e649b634b.js"></script>-->
+    <script src="/static/js/X-editable/jquery-2.js"></script>
+    <script src="/static/assets/jquery.slides.min.js"></script>
+    <!--&lt;!&ndash; bootstrap &ndash;&gt;-->
+    <!--<link href="/static/js/X-editable/bootstrap-combined.css" rel="stylesheet">-->
+    <!--<script src="/static/js/X-editable/bootstrap.js"></script>-->
+
+    <!-- x-editable (bootstrap version) -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <link rel="stylesheet" href="/static/assets/slidejs.css"/>
+
+    <meta content='LIT Design - Home of X-Lab / BUTIFO / P3D.CC' name='description'>
+    <meta content="authenticity_token" name="csrf-param"/>
+    <meta content="the csrf toaken here" name="csrf-token"/>
+    <meta charset="utf-8">
+</head>
+<body>
+<div class='main-container'>
+<div class='header'>
+    <div class='header-content container'>
+        <h1>
+            <a href="/home">LIT Design</a>
+        </h1>
+
+        <!--<h2> LIT Design - Think Better, Design Better, Live Better. </h2>-->
+
+        <div class='top-menu'>
+            {% if loginned %}
+            hello,{{username}}
+            <input id="edit-button" type="button" value="edit" />
+            <a id='logout' href='/accounts/logout/'>Logout</a>
+            {% else %}
+            <a href="/contact">Contact</a>
+            <a href="/accounts/login/">Login</a>
+            {% endif %}
+        </div>
+        <div id="slideContainer">
+            <div id="slides" class="can_upload" >
+                {% for img in slideimglist %}
+                <img src="/static/assets/slide/{{img.filename}}" />
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class='menu'>
+    <div class='menu-content container'>
+        <ul>
+            <li class='overview'>
+                <a href="#overview">光束设计</a>
+            </li>
+            <li class='features'>
+                <a href="#features">X-Lab<sup>TM</sup></a>
+            </li>
+            <li class='performance'>
+                <a href="#performance">BUTIFO<sup>TM</sup></a>
+            </li>
+            <li class='battery'>
+                <a href="#battery">P3D.CC<sup>TM</sup></a>
+            </li>
+            <li class='mechanical'>
+                <a href="#mechanical">设计竞赛</a>
+            </li>
+            <li class='specs'>
+                <a href="#specs">更多</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='body'>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='overview'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xs-1 icon overview'></div>
+                <div class='col-xs-6'>
+                    <h2 class='overview'>
+                        光束设计
+                    </h2>
+                </div>
+            </div>
+            <div class='row last-content'>
+                <div class='col-xs-5 col-md-offset-1'>
+                    <p class="can_update" edit_id='1'>
+                        {{ textlist.0.content }}
+                    </p>
+                </div>
+                <div class='col-xs-5'>
+                    <p class="can_update" edit_id='2'>
+                        {{ textlist.1.content|safe }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='features'>
+        <div class='fingerprint'></div>
+        <div class='container container-fingerprint'>
+            <div class='row move-up'>
+                <div class='col-xs-1 icon features'></div>
+                <div class='col-xs-11'>
+                    <h2 class='features'>
+                        产品创新实验室
+                    </h2>
+                </div>
+            </div>
+            <div class='row row-fingerprint'>
+                <div class='col-xs-5 col-md-offset-column' about="/my/article">
+                    <h3 class="can_update" edit_id='3' property="title">
+                        {{ textlist.2.content|safe }}
+                    </h3>
+
+                    <p class="can_update" edit_id='4' property="content">
+                        {{ textlist.3.content|safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class='hr'></div>
+
+    </div>
+</div>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='performance'>
+        <div class='back-performance'></div>
+        <div class='container'>
+            <div class='row move-up'>
+                <div class='col-xs-1 icon performance'></div>
+                <div class='col-xs-11'>
+                    <h2 class='performance'>
+                        模块化空间定制
+                    </h2>
+                </div>
+            </div>
+            <div class='row pedal'>
+                <div class='col-xs-5 col-md-offset-column'>
+                    <h3 class="can_update" edit_id='5'>
+                        {{ textlist.4.content|safe }}
+                    </h3>
+
+                    <p class="can_update" edit_id='6'>
+                        {{ textlist.5.content|safe }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='battery'>
+        <div class='big-battery'></div>
+        <div class='container container-battery'>
+            <div class='row'>
+                <div class='col-xs-1 icon battery'></div>
+                <div class='col-xs-11'>
+                    <h2 class='battery'>
+                        产品展示、协同设计
+                    </h2>
+                </div>
+            </div>
+            <div class='row row-battery'>
+                <div class='col-xs-5 col-md-offset-column'>
+                    <h3 class="can_update" edit_id='7'>
+                        {{ textlist.6.content|safe }}
+                    </h3>
+
+                    <p class="can_update" edit_id='8'>
+                        {{ textlist.7.content|safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='mechanical'>
+        <div class='rugged-design'></div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xs-1 icon mechanical'></div>
+                <div class='col-xs-11'>
+                    <h2 class='mechanical'>
+                        <!--<a href="/designawards.html">-->
+                            设计竞赛
+                        </a>
+                    </h2>
+                </div>
+            </div>
+            <div class='row row-rugged'>
+                <div class='col-xs-4 col-md-offset-column'>
+                    <h3 class="can_update" edit_id='9'>
+                        {{ textlist.8.content|safe }}
+                    </h3>
+
+                    <p class="can_update" edit_id='10'>
+                        {{ textlist.9.content|safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='body-content-start'></div>
+<div class='body-content'>
+    <div id='specs'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-xs-1 icon specs'></div>
+                <div class='col-xs-11'>
+                    <h2>
+                        更多
+                    </h2>
+                </div>
+            </div>
+            <div class='row row-specs'>
+                <div class='col-xs-3 col-md-offset-1'>
+                    <h3>
+                        软件开发
+                    </h3>
+                </div>
+                <div class='col-xs-7'>
+                    <p class="can_update" >
+                        在线家居定制展示系统
+                        <br>
+                        在线光电产品定制展示系统
+                        <br>
+                        Android三维展示、增强现实
+                        <br>
+                        IOS三维展示、增强现实
+                        <br>
+                        在线交互式财务数据分析系统
+                    </p>
+                </div>
+            </div>
+            <div class='row row-specs'>
+                <div class='col-xs-3 col-md-offset-1'>
+                    <h3>
+                        硬件研发
+                    </h3>
+                </div>
+                <div class='col-xs-7'>
+                    <p class="can_update" >
+                        RFID物流管理系统
+                        <br>
+                        佩戴式肌电感应手环
+                        <br>
+                        三维打印 <br>
+                        智能家居系统
+                    </p>
+                </div>
+            </div>
+            <div class='row row-specs'>
+                <div class='col-xs-3 col-md-offset-1'>
+                    <h3>
+                        网络运营
+                    </h3>
+                </div>
+                <div class='col-xs-7'>
+                    <p class="can_update" >
+                        网站咨询设计
+                        <br>
+                        服务器运维咨询
+                    </p>
+                </div>
+            </div>
+            <div class='row row-specs'>
+                <div class='col-xs-3 col-md-offset-1'>
+                    <h3>
+                        知识产权保护
+                    </h3>
+                </div>
+                <div class='col-xs-7'>
+                    <p class="can_update" >
+                        版权登记
+                        <br>
+                        外观专利申请
+                        <br>
+                        实用新型专利申请
+                        <br>
+                        发明专利申请
+                    </p>
+                </div>
+            </div>
+            <div class='row row-specs'>
+                <div class='col-xs-3 col-md-offset-1'>
+                    <h3>
+                        设计服务外包
+                    </h3>
+                </div>
+                <div class='col-xs-7'>
+                    <p class="can_update" >
+                        工业产品外观设计
+                        <br>
+                        平面设计
+                        <br>
+                        企业VI设计
+                        <br>
+                        包装设计
+                        <br>
+                        产品生命周期设计
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class='main-container'>
+    <div class='footer'>
+        <div class='footer-content container'>
+            <div class='badges'>
+                <p class='copyright'>
+                    版权所有 &copy;
+                    2014
+                    厦门光束信息科技有限公司 - 闽ICP备13021721号
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<iframe id='editframe' width='300' height='400'
+        style='display: none;position: fixed;right: 20px;bottom: 40px;'></iframe>
+
+<style type="text/css">
+.is_editing {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  border:5px solid red; }
+    
+#editframe{
+    background-color: white;
+    filter:alpha(opacity=80);  /*支持 IE 浏览器*/
+    -moz-opacity:0.80; /*支持 FireFox 浏览器*/
+    opacity:0.80;  /*支持 Chrome, Opera, Safari 等浏览器*/
+    z-index: 9999;
+}
+/* 针对X-editable插件进行修正 */
+.editable-pre-wrapped {
+    white-space: pre-line;
+}
+</style>
+
+<script type="text/javascript">
+var  UPDATE_ID;
+function edit(content){
+    $.ajax({
+        type: "POST",
+        url: "/update/edit/"+UPDATE_ID+'/',
+        data: {
+            content:content
+            },
+        success: function(){
+        window.location.reload();
+        }
+   });
+}
+function quitEdit(){
+    $('.is_editing').removeClass('is_editing');
+    $("#editframe").hide();
+}
+$(function () {
+    $("#slides").slidesjs({
+		width: 500,
+		height: 250,
+		play: {
+			active: true,
+			auto: true,
+			interval: 3000,
+			swap: true
+		}
+    });
+
+    {% if loginned %}
+    $.fn.editable.defaults.mode = 'inline';
+
+    $(".can_update").each(function(){
+        var updateId =$(this).attr("edit_id");
+        $(this).wrapInner('<a href="javascript:;" ></a>')
+                .children('a').editable({
+                    name: 'content',
+                    type: 'textarea',
+                    escape:false,
+                    pk: 1,
+                    //toggle:'manual',
+                    url: '/update/edit/'+updateId+'/',
+                    title: 'Enter username'
+                    //placement:'left'
+                });
+    });
+
+//    $('#edit-button').click(function(e) {
+//        e.stopPropagation();
+//        $('.editable').editable('show');
+//    });
+//    $(".can_update").click(function () {
+//		$('.is_editing').removeClass('is_editing');
+//		$(this).addClass('is_editing');
+//        UPDATE_ID=$(this).attr("edit_id");
+//        $("#editframe").attr("src", "/update/edit/" + UPDATE_ID + '/')
+//                .show()
+//    });
+
+    $(".can_upload").click(function () {
+		$('.is_editing').removeClass('is_editing');
+		$(this).addClass('is_editing');
+        $("#editframe").attr("src","/update/upload_slide/")
+            .show();
+    });
+
+    {% endif %}
+
+
+});
+</script>
+</body>
+
+</html>

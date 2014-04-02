@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <Key>assets/play-24f972ddea311469389b1134bc08fc1a.png</Key>
+  <RequestId>53342FBF520C58007B54A15F</RequestId>
+  <HostId>xmlit.oss-cn-hangzhou.aliyuncs.com</HostId>
+</Error>

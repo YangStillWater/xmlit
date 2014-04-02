@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact LIT Design</title>
+    <link href="/static/assets/favicon-5329503098253a17785777dde43f6696.html" rel="shortcut icon"
+          type="image/vnd.microsoft.icon"/>
+    <link href="/static/assets/application-9a021df888e6d8c5d11b39f94474b1a0.css" media="all" rel="stylesheet"/>
+    <script src="/static/assets/application-fa172cf6dcd5d0571edab42e649b634b.js"></script>
+    <meta content='The Greyp G-12 is designed from the ground up to combine the best of both worlds – motorcycles and bicycles. It is a bicycle when you want it, or a motorcycle when you need it.'
+          name='description'>
+    <meta content="authenticity_token" name="csrf-param"/>
+    <meta content="ui7WDoJQzgASYN/MyKFUa9Id/jBn4QZU7C9D99X3R7U=" name="csrf-token"/>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html,body{margin:0;padding:0;}
+        .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+        .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+
+        #dituContent{
+            width: 700px;
+            height: 500px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border: 1px solid rgb(204, 204, 204);
+            overflow: hidden;
+            background-image: url(../api.map.baidu.com/images/bg.png);
+            color: rgb(0, 0, 0);
+            text-align: left;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+            border-radius: 3px;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true"></script>
+</head>
+<body>
+<div class='main-container'>
+    <div class='header header-inner'>
+        <div class='header-content container'>
+            <h1>
+                <a href="index.html">LIT Design</a>
+            </h1>
+
+            <div class='top-menu'>
+                <a class="active" href="contact.htm">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class='body'>
+        <div class='body-content-start'></div>
+        <div class='body-content'>
+            <div id='contact'>
+                <div class='container map'>
+                    <div class='row'>
+                        <div class='col-xs-11 col-md-offset-1'>
+                            <h2>
+                                联系我们
+                            </h2>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs-8 col-md-offset-1'>
+                            <h3>
+                                厦门光束信息科技有限公司
+                            </h3>
+
+                            <p>
+                                厦门市火炬高新区创业园
+                                <br>
+                                伟业楼S108
+                            </p>
+
+                            <p>
+                                Tel: +0592 5021231
+                            </p>
+
+                        </div>
+                    </div>
+                    <div id='contact-map'>
+                        <div id="dituContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='body-content-start'></div>
+        <div class='body-content'>
+            <div id='contact-rest'>
+                <div class='container'>
+                    <div class='row emails'>
+                        <div class='col-xs-3 col-md-offset-1'>
+                            <p class='strong'>
+                                信息咨询
+                            </p>
+
+                            <p>
+                                <a href="mailto:info@xmlit.com">info@xmlit.com</a>
+                            </p>
+                        </div>
+                        <div class='col-xs-4'>
+                            <p class='strong'>
+                                客户支持
+                            </p>
+
+                            <p>
+                                <a href="mailto:support@xmlit.com">support@xmlit.com</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class='main-container'>
+    <div class='footer'>
+        <div class='footer-content container'>
+            <div class='badges'>
+
+
+                <p class='copyright'>
+                    版权所有 &copy;
+                    2014
+                    厦门光束信息科技有限公司 - 闽ICP备13021721号
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(118.138379,24.523218);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+    }
+
+    //标注点数组
+    var markerArr = [{title:"光束设计",content:"厦门光束信息科技有限公司<br/>厦门留学人员创业园伟业楼S108<br/>0592-5021231",point:"118.138016|24.523597",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+20,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("/static/assets/map_icons.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+
+    initMap();//创建和初始化地图
+
+
+</script>
+
+
+</body>
+
+</html>

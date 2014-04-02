@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>修改文字</title>
+    <script src="/static/assets/application-fa172cf6dcd5d0571edab42e649b634b.js"></script>
+    <script src="/static/assets/jquery.slides.min.js"></script>
+</head>
+
+<body>
+    <p>上次修改人：{{t.upd_person}}</p>
+    <p>上次修改时间{{t.upd_date}}</p>
+    <div>
+        <textarea cols='20' rows='13' id='content' name='content'>{{t.content}}</textarea>
+    </div>
+    <div>
+        <input id="edit" type="button" name="edit" value="提交" class="bt"/>
+        <input id="quit" type="button" value="结束编辑" class="bt"/>
+    </div>
+</body>
+<style type="text/css">
+body{
+    background-color: white;}
+</style>
+
+<script type="text/javascript">
+$("#edit").click(function(){
+    top.window.edit($("#content").val());
+});
+$("#quit").click(function(){
+    top.window.quitEdit();
+});
+</script>
+</html>

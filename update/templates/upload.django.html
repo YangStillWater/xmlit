@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>上传图片</title>
+</head>
+
+<body>
+  <form id="form" action=""  method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <p><img id="guideimg" src="{{imgURL}}"/></p>
+  <p>从电脑中选择你喜欢的照片：</p>
+  <p>你可以上传JPG、JPEG、GIF、PNG或BMP文件。</p>
+  <p><input id="imgfile" type="file" name="img" /></p>
+  <div>
+    <input id="upload" type="submit" name="upload" value="开始上传" class="bt"/>
+  </div>
+  <p>{{hasUpload}}</p>
+  </form>
+</body>
+</html>

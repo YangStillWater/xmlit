@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>上传图片</title>
+    <script src="/static/assets/application-fa172cf6dcd5d0571edab42e649b634b.js"></script>
+    <script src="/static/assets/jquery.slides.min.js"></script>
+</head>
+
+<body>
+  <p>
+    <form id="form" action=""  method="post"  enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for img in slideimglist %}
+            <div class='imglist' filename='{{img.filename}}'>
+                <img height='90' width=='120' src="/static/assets/slide/{{img.filename}}" />
+            </div>
+        {% endfor %}
+        </p>
+        <div id='select'>
+          <p id='tip'></p>
+          <p>你可以上传JPG、JPEG、GIF、PNG或BMP文件。</p>
+          <p><input id="imgfile" type="file" name="img" /></p>
+        </div>
+        <div>
+            <input type='hidden' name='filename'/>
+            <input type='hidden' name='option'/>
+          <input id="add" type="button" value="添加图片" class="bt"/>
+          <input id="upload" type="submit" value="开始上传" class="bt"/>
+          <br/>
+            <input id="quit" type="button" value="结束编辑" class="bt"/>
+
+        </div>
+        <div id='mask'>
+            <input id="overwrite" type="button" value="更改" class="bt"/><br/>
+            <input id="delete" name='delete' type="submit" value="删除" class="bt"/>
+        </div>
+    </form>
+</body>
+<style type="text/css">
+.imglist{
+    width: 130px;height: 100px;
+}
+.is_editing {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  border:5px solid red; }
+    
+#mask {
+    display: none;
+    width: 80px;
+    height: 80px;
+    padding: 20px ;
+    z-index: 9999;
+    }
+#select,#upload{display: none;}
+</style>
+
+<script type="text/javascript">
+var FILENAME;    
+$(".imglist").click(function(){
+    $('.is_editing').removeClass('is_editing');
+    $(this).addClass('is_editing');
+    $("#mask").show().offset($(this).offset());
+    FILENAME=$(this).attr('filename');
+    $("input[name='filename']").val(FILENAME);
+});
+$("#overwrite").click(function(){
+    $("#tip").text('覆盖图片'+FILENAME);
+    $("#mask,#add").hide();
+    $("#select,#upload").show();
+    $("input[name='option']").val('overwrite');
+});
+$("#add").click(function(){
+    $("#tip").text('添加图片');
+    $("#mask,#add,.imglist").hide();
+    $("#select,#upload").show();
+    $("input[name='option']").val('add');
+});
+$("#quit").click(function(){
+    top.window.quitEdit();
+});
+</script>
+
+</html>
